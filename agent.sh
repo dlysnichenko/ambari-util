@@ -9,4 +9,4 @@ rm -f /var/log/ambari-agent/ambari-agent.log
 rm -rf /var/lib/ambari-agent/puppet/modules
 cp -R /root/ambari/ambari-agent/src/main/puppet/modules /var/lib/ambari-agent/puppet
 cd /root/ambari/ambari-agent/src/main/python/ambari_agent
-python main.py
+python main.py "$@"
