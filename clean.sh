@@ -1,5 +1,5 @@
-rm /var/log/ambari/ambari*
-rm /var/log/ambari-agent/ambari*
+: > /var/log/ambari/ambari*
+: > /var/log/ambari-agent/ambari*
 
 DIR=`pwd`
 cd /root/ambari-util/
