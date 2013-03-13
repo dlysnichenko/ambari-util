@@ -7,7 +7,9 @@ cp -f pg_hba.conf /var/lib/pgsql/data
 cp -f postgresql.conf /var/lib/pgsql/data
 sleep 5
 service postgresql start
+
 #sudo -u postgres psql -U postgres < $AMBARI_DIR/ambari-server/src/main/resources/Ambari-DDL-Postgres-CREATE.sql
-cp -f $AMBARI_DIR/ambari-server/src/main/resources/Ambari-DDL-Postgres-CREATE.sql /tmp
-sleep 5
-sudo -u postgres psql -U postgres -f /tmp/Ambari-DDL-Postgres-CREATE.sql -v username="\"ambari-server\"" -v password="'bigdata'"
+#cp -f $AMBARI_DIR/ambari-server/src/main/resources/Ambari-DDL-Postgres-CREATE.sql /tmp
+#sleep 5
+#sudo -u postgres psql -U postgres -f /tmp/Ambari-DDL-Postgres-CREATE.sql -v username="\"ambari-server\"" -v password="'bigdata'"
+sudo -u postgres psql -U postgres -v username="\"ambari-server\"" -v password="'bigdata'" < $AMBARI_DIR/ambari-server/src/main/resources/Ambari-DDL-Postgres-CREATE.sql
